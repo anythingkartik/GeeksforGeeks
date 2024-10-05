@@ -56,28 +56,24 @@ class GFG {
 class Solution {
     int getMiddle(Node head) {
         if (head == null) {
-            return -1;  // or any appropriate value for empty list
+            return -1;  //value for empty list
         }
         
         Node temp = head;
         int len = 0;
-        
-        // First, calculate the length of the linked list
         while (temp != null) {
             len += 1;
             temp = temp.next;
         }
         
         // Calculate the middle index (0-based, so len/2 gives us the middle)
-        len = len / 2;
+        len =len / 2;
         
         // Reset temp to head and traverse to the middle element
         temp = head;
         for (int i = 0; i < len; i++) {
             temp = temp.next;
         }
-        
-        // Return the data at the middle node
         return temp.data;
     }
 }
